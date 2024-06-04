@@ -25,4 +25,8 @@
     "eslint-plugin-react-refresh": "^0.3.4",
     "vite": "^4.3.9"
   }
+    "scripts": {
+    "test": "jest",  // or any other test framework like mocha, jasmine
+    "build": "webpack"  // or another build tool like parcel, rollup
+  }
 }
