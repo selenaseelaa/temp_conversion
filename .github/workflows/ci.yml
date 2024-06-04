@@ -1,40 +1,13 @@
-name: CI
-
-# Triggers the workflow on push or pull request events but only for the main branch
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
-
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
 jobs:
-  build_and_test:
+  check-bats-version:
     runs-on: ubuntu-latest
-
     steps:
-    # Check out the repository
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    # Set up Node.js environment
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-
-    # Install dependencies
-    - name: Install dependencies
-      run: npm install
-
-    # Run unit tests
-    - name: Run tests
-      run: npm test
-
-    # Build the application
-    - name: Build
-      run: npm run build
-
-    # Optionally, you can add deployment steps here if needed
-    # - name: Deploy
-    #   run: |
-    #     # Your deployment script or command
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install -g bats
+      - run: bats -v
