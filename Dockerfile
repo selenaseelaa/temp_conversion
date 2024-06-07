@@ -16,8 +16,11 @@ COPY . .
 # Build the Vite application
 RUN npm run build
 
+# Run test
+RUN npm run test
+
 # Expose port 5173 (default port for Vite preview)
 EXPOSE 5173
 
 # Command to run the Vite preview server
-CMD ["npm", "run", "preview", "--", "--host", "--port", "5173"]
+CMD ["npm", "run", "preview", "--host", "--port", "5173"]
