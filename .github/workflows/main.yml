@@ -86,5 +86,5 @@ jobs:
           docker push my-registry/staging/myapp:latest
 
       - name: Deployment to Staging Completed
-        run: echo "Deployment to staging environment has completed successfully."
+        run: echo "Deployment to staging environment has completed successfully amin."
 
