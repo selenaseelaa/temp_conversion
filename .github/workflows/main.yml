@@ -78,7 +78,7 @@ jobs:
         run: |
           docker buildx create --use
           docker buildx build --platform linux/amd64,linux/arm64 -t myapp .
-          docker tag myapp my-registry/staging/myapp:latest
+          docker tag temp_conversion-degconverter-1 nanskee/temp_conversion:v1
 
       - name: Push Docker image to Docker Hub
         run: |
