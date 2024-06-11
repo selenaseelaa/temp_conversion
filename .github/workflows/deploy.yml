@@ -1,9 +1,6 @@
 name: CD 
 
-on:
-  push:
-    branches:
-      - master  # Trigger the workflow on push to the main branch
+on: [push]
 
 jobs:
   build:
