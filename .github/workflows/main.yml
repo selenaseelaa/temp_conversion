@@ -78,12 +78,12 @@ jobs:
         run: |
           docker buildx create --use
           docker buildx build --platform linux/amd64,linux/arm64 -t myapp .
-          docker tag temp_conversion-degconverter-1 docker.io/nanskee/temp_conversion
+          docker tag temp_conversion-degconverter docker.io/nanskee/staging/temp_conversion-degconverter:latest
 
       - name: Push Docker image to Docker Hub
         run: |
           docker buildx create --use
-          docker push my-registry/staging/myapp:latest
+          docker push docker.io/nanskee/staging/temp_conversion-degconverter:latest
 
       - name: Deployment to Staging Completed
         run: echo "Deployment to staging environment has completed successfully amin."
