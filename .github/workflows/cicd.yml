@@ -29,4 +29,4 @@ jobs:
       - name: Delete old container
         run: docker rm -f temp-conversion-container  
       - name: Run docker container
-        run: docker run -d -p 3000:3000 --name temp-conversion-container nanskee/temp_conversion
+        run: docker run -d -p 3000:5173 --name temp-conversion-container nanskee/temp_conversion
